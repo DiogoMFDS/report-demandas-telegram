@@ -1,0 +1,5 @@
+cffi         == 2.0.0
+cryptography == 46.0.7
+iniUts       == 2.0.3
+pycparser    == 3.0
+telebot      == 0.0.5
