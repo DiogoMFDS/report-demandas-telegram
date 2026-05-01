@@ -2,7 +2,8 @@
 
 Bot Telegram responsável por enviar mensagens a partir de arquivos colocados em uma pasta específica.
 
-No momento envia arquivos: .txt
+No momento, envia apenas arquivos `.txt`.
+
 ## O que o projeto faz
 
 - Lê arquivos `.txt` em `App/Docs/Enviar`
@@ -14,6 +15,26 @@ No momento envia arquivos: .txt
 
 - Python 3.8 ou superior
 - Internet ativa para acesso à API do Telegram
+- Token
+- ID do canal
+
+## Como conseguir um token
+
+- Abra o Telegram e procure por `@BotFather`
+- Inicie uma conversa e envie o comando `/newbot`
+- Siga as instruções até ele fornecer o token
+
+## Como conseguir o ID do canal
+
+- Envie qualquer mensagem no canal criado
+- Encaminhe a mensagem para o bot `@userinfo3bot`
+- Colete o ID no retorno da mensagem do bot
+
+## Como colocar o bot como administrador do canal
+
+- Pelo celular, abra o canal criado
+- Vá para as `configurações do canal > editar > administradores`
+- Busque pelo bot e adicione-o com as permissões necessárias
 
 ## Instalação
 
@@ -50,16 +71,16 @@ python App\__main__.py
 executar.bat
 ```
 
-O `executar.bat` também cria/ativa o ambiente virtual e instala as dependências se necessário.
+O `executar.bat` também cria/ativa o ambiente virtual e instala as dependências, se necessário.
 
 ## Como funciona
 
 - `App/__main__.py` inicializa o logger e executa `Funcao.enviar_mensagem()`
 - `App/Modules/funcao.py`:
-  - cria as pastas `App/Docs/Enviar` e `App/Docs/Enviado` quando faltam
+  - cria as pastas `App/Docs/Enviar` e `App/Docs/Enviado`, caso estejam ausentes
   - lista os arquivos em `App/Docs/Enviar`
   - envia cada `.txt` como mensagem Markdown para o canal Telegram
-  - salva o `message_id` e data/hora em `App/Docs/Enviado/ids_mensagens.json`
+  - salva o `message_id` e a data/hora em `App/Docs/Enviado/ids_mensagens.json`
   - remove o arquivo `.txt` enviado com sucesso
 
 ## Estrutura do projeto
@@ -90,6 +111,6 @@ Os logs são gravados em `logs/` por padrão. A configuração de log define:
 
 - Apenas arquivos `.txt` são processados.
 - O bot salva IDs de mensagens enviadas para possível controle posterior.
-- Se não houver arquivos para enviar, o bot apenas registra e termina.
+- Se não houver arquivos para enviar, o bot apenas registra e encerra.
 
 
