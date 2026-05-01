@@ -29,7 +29,7 @@ class Funcao():
         for arquivo in arquivos:
             #verifica a extensão do arquivo
             if arquivo.endswith('.txt'):
-                with open(os.path.join(self.caminho_enviar, arquivo), 'r') as f:
+                with open(os.path.join(self.caminho_enviar, arquivo), 'r', encoding='utf-8') as f:
                     texto = f.read()
                     if self._enviar_texto(texto):
                         excluir = True
