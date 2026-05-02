@@ -53,4 +53,4 @@ if errorlevel 1 (
 REM Desativando o ambiente virtual
 call venv\Scripts\deactivate.bat
 echo Aplicativo executado com sucesso.
-pause
+exit /b 0
