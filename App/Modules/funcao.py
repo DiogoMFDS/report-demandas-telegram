@@ -23,7 +23,7 @@ class Funcao():
 
         if len(arquivos) == 0:
             cfg.log.info("Nenhum arquivo encontrado para enviar.")
-            self._enviar_texto(self, '*Sem arquivos* para enviar!')
+            self._enviar_texto('*Sem arquivos* para enviar!')
             return
         
         for arquivo in arquivos:
